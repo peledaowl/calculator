@@ -26,6 +26,7 @@ let result = null
 const buttons = document.querySelectorAll('button')
 buttons.forEach(button => {
   button.addEventListener('mousedown', () => {
+    button.style.background = "#b83e0f"
     let btnValue = button.getAttribute('data-value')
     if (btnValue == "C"){
       operand1 = null
@@ -58,14 +59,15 @@ buttons.forEach(button => {
         input = null
         prevOperator = '='
       }
-      else if (btnValue != "%") {
-        operand2 = Number(input)
-        input = ''
-        if (operand2 != null){
-        operand1 = calcExpression(operand1, operand2, btnValue)
-        operand2 = null
-        updateDisplay(operand1)
-      }}
+      else if (btnValue != "%" && btnValue != "=") {
+        if (operand2 !== null) {
+          operand1 = calcExpression(operand1, operand2, prevOperator);
+          operand2 = null;
+        }
+        input = '';
+        prevOperator = btnValue;
+        updateDisplay(operand1);
+      }
       prevOperator = btnValue
     }
     else {
@@ -73,6 +75,9 @@ buttons.forEach(button => {
       else {input += Number(btnValue)}
       updateDisplay(input)
     }
+  })
+  button.addEventListener('mouseup', () => {
+    button.style.background = "#FF5714"
   })
 })
 
