@@ -20,7 +20,7 @@ body {
   height: 800px;
   width: 600px;
   background-color: #191716;
-  border-radius: 5%;
+  border-radius: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,6 +34,8 @@ body {
   background-color: black;
   border: solid #beb7a4 3px;
   margin-bottom: 67px;
+  display: flex;
+  align-items: center;
 }
 
 .input-panel {
@@ -52,7 +54,8 @@ button {
   background-color: #FF5714;
   color: #E0E2DB;
   font-family: 'Helvetica', 'Arial', sans-serif;
-  font-size: large;
+  font-size: larger;
+  font-weight: 700;
   height: 80px;
   width: 80px;
   border-radius: 20px;
@@ -67,4 +70,11 @@ button {
   border-radius: 20px;
   border: 0px;
   margin: 10px 22px;
+}
+
+.display-input {
+  color: #E0E2DB;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: xxx-large;
+  margin-left: 30px;
 }
